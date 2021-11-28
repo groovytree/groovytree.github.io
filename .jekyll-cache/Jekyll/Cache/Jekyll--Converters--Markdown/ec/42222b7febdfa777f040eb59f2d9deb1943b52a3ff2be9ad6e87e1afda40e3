@@ -1,0 +1,30 @@
+I"�<ol>
+  <li>
+    <p>데이터베이스 성능 비교의 중점은</p>
+  </li>
+  <li>
+    <p>Computing, Storage, 기능, 가격</p>
+  </li>
+</ol>
+
+<p>json 데이터를 다루는 측면에서의 비교</p>
+
+<p>두 개의 데이터베이스 모두 MPP(Massively Parellel Processing), 대규모 병렬처리가 가능한 비공유 아키텍처(Shared Nothing) 이며, 이에 대한 장/단점을 그대로 가지고 있다.</p>
+<ul>
+  <li>성능과 확장성</li>
+  <li>메모리와 운영체제를 공유하지 않기 때문에 데이터 병목현상이 없고 노드를 추가하기 쉽다</li>
+</ul>
+
+<p>External Table 로딩 기술 (대용량 데이터 로딩 기술)</p>
+
+<ol>
+  <li>Redshift 는 OLAP 전용으로 설계되었으나, computing engine 이 OLTP (Postgres)
+    <ul>
+      <li>OLTP는 전통적으로 행 기반으로 데이터를 저장하는 반면, redshift는 최적 메모리 사용 및 디스크 I/O를 위한 특수 데이터 압축 인코딩을 사용하여 데이터를 열에 저장. 보조 인덱스, 단일 행 데이터 조작 작업 등의 OLTP 기능상의 이점은 redshift 에서는 생략되었음</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Reference:
+https://docs.aws.amazon.com/ko_kr/redshift/latest/dg/c_redshift-and-postgres-sql.html</p>
+:ET

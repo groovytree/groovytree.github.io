@@ -1,0 +1,27 @@
+I"<p>Welcome to YAMT - Yet Another Minimal Theme. YAMT is a minimal Jekyll theme focused on simplicity and ease-of-use. It has great modularity, allowing you to easily decide what you actually want on your website.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#features" id="markdown-toc-features">Features</a></li>
+  <li><a href="#installation" id="markdown-toc-installation">Installation</a></li>
+  <li><a href="#customization" id="markdown-toc-customization">Customization</a></li>
+</ul>
+
+<h2 id="features">Features</h2>
+<ul>
+  <li>Minimal and clean design.</li>
+  <li>Fully modular: activate and load only what you really need.</li>
+  <li>Works great on mobile and smaller screens.</li>
+  <li>Supports <a href="https://disqus.com/">Disqus</a> comments activated only on button press, if you activate them.</li>
+  <li><a href="https://www.google.com/analytics/">Google Analytics</a> support.</li>
+  <li><a href="https://ogp.me/">Open Graph</a> and <a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started">Twitter Cards</a> support to better index the website content on search engines and social networks.</li>
+  <li><a href="https://www.mathjax.org/">MathJAX</a> and <a href="https://www.latex-project.org/">LaTeX</a> optional support. Write beautiful math!</li>
+  <li><a href="https://github.com/jekyll/jekyll-feed">RSS</a> support.</li>
+  <li>Beautiful <a href="https://yamt.netlify.app/2020/05/19/special-formatting.html#syntax-highlight">Syntax Highlight</a>. Write some code and show it in a graceful way.</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+<p><a href="https://github.com/PandaSekh/Jekyll-YAMT#installation">Read here</a>.</p>
+
+<h2 id="customization">Customization</h2>
+<p><a href="https://github.com/PandaSekh/Jekyll-YAMT#customize">Read here</a>.</p>
+:ET

@@ -1,0 +1,35 @@
+I"&<p>Error:</p>
+
+<p>Code:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Connection timed out connect:
+Communications link failure
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	Connection timed out: connect
+</code></pre></div></div>
+
+<p>Solution:</p>
+<ol>
+  <li>연결하려는 서버 정보가 올바르게 기재되어있는지 다시 확인. db endpoint, pot, user, pw, connection driver settings ..</li>
+  <li>연결 서버에 ping 으로 확인한다</li>
+  <li>Driver properties 설정 변경
+    <ul>
+      <li>serverTimezone -&gt; UTC</li>
+      <li>autoReconnect=true</li>
+      <li>tcpKeepalive=true</li>
+    </ul>
+  </li>
+  <li>meta temp값을 날리고 재접속
+    <ul>
+      <li>C:Users &gt; username &gt; AppData &gt; Roaming &gt; DBeaverData &gt; workspace6 &gt; .metadata metadata 폴더를 백업한 후, 본 위치에서 날리고 dbeaver에 재접속한다.</li>
+    </ul>
+  </li>
+  <li>MySQL 서버가 설치되어있는 경우, 서버 설정값을 변경한다
+    <ul>
+      <li>C:ProgramData &gt; MySQL &gt; MySQL Server x.0 &gt; my.ini 설정 파일</li>
+      <li>mawait_timeout, interactive_timeout 값을 초 단위로 8시간 이상으로 설정. 설정 시간 동안 연결을 유지함</li>
+    </ul>
+  </li>
+</ol>
+
+<p>순서대로 해볼 수 있는 경우의 수를 작성하였다. mysql 서버, connector 재설치 다 해보았지만 결국 서버 정보를 잘못 입력 ; 삽질의 기록..</p>
+:ET
