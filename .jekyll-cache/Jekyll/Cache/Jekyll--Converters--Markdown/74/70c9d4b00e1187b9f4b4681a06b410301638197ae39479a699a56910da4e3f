@@ -1,0 +1,7 @@
+I"-<h2 id="key-capabilities">Key capabilities</h2>
+<ol>
+  <li>전통DB에서 처리하는 Relational DB, 관계형DB가 아니다.</li>
+  <li>PK/FK (Primary Key/Foreign Key) 제약이 없습니다.</li>
+  <li>No indexing / No performance tuninig / no partitioning / no physical storage design</li>
+</ol>
+:ET

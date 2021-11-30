@@ -1,13 +1,11 @@
-I"&<p>Error:</p>
-
-<p>Code:</p>
+I"D<h2 id="error-code">Error Code:</h2>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Connection timed out connect:
 Communications link failure
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
 	Connection timed out: connect
 </code></pre></div></div>
 
-<p>Solution:</p>
+<h2 id="solution">Solution:</h2>
 <ol>
   <li>연결하려는 서버 정보가 올바르게 기재되어있는지 다시 확인. db endpoint, pot, user, pw, connection driver settings ..</li>
   <li>연결 서버에 ping 으로 확인한다</li>
@@ -31,5 +29,5 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
   </li>
 </ol>
 
-<p>순서대로 해볼 수 있는 경우의 수를 작성하였다. mysql 서버, connector 재설치 다 해보았지만 결국 서버 정보를 잘못 입력 ; 삽질의 기록..</p>
+<p>순서대로 해볼 수 있는 경우의 수를 작성하였다. mysql 서버, connector 재설치 다 해보았지만 결국 서버 정보를 잘못 입력 ㅋㅋ 삽질의 기록..</p>
 :ET
