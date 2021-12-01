@@ -2,7 +2,7 @@
 layout: post
 title: MySQL - Communication Link Failure
 subtitle: MySQL 서버 통신 오류 에러
-categories: MySQL
+categories: DB
 tags: [DB, MySQL, Error, Troubleshooting]
 ---
 

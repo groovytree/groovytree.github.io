@@ -2,8 +2,8 @@
 layout: post
 title: Database - Snowflake vs Redshift
 subtitle: Difference on Cloud Computing
-categories: cloud DB
-tags: [AWS, DB, Snowflake, Redshift, Docs]
+categories: DB
+tags: [AWS, DB, cloudDB, Snowflake, Redshift, Docs]
 ---
 
 데이터베이스 성능 비교의 중점은 Computing, Storage, 기능, 가격

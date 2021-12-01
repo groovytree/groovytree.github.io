@@ -2,8 +2,8 @@
 layout: post
 title: Database - Snowflake
 subtitle: Snowflake key capabilities
-categories: cloud DB
-tags: [Cloud, DB, Snowflake, Docs]
+categories: DB
+tags: [Cloud, DB, cloudDB, Snowflake, Docs]
 ---
 
 ## Key capabilities

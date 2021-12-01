@@ -2,7 +2,7 @@
 layout: post
 title: EMR Provisioning - instance type
 subtitle: c4.large type 서울 리전 지원
-categories: Amazon Web Services
+categories: AWS
 tags: [AWS, EMR, Troubleshooting]
 ---
 

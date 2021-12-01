@@ -2,7 +2,7 @@
 layout: post
 title: Redshift Pause/Resume Schedule
 subtitle: Crontab으로 조정하기 
-categories: Amazon Web Services
+categories: AWS
 tags: [AWS, Redshift, Docs]
 ---
 

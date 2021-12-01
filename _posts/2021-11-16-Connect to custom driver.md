@@ -2,7 +2,7 @@
 layout: post
 title: MySQL - Connect to Custom Driver
 subtitle: Custom Driver 셋팅하여 인터넷 불가 환경에서 DB 접속하기
-categories: MySQL
+categories: DB
 tags: [DB, MySQL, Docs]
 ---
 
