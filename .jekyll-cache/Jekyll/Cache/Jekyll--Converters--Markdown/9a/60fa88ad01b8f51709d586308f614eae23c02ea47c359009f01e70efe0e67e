@@ -1,0 +1,175 @@
+I"�/<h2 id="내용">내용</h2>
+<p>codepipeline을 구축하여 repository에 code를 형상관리, 빌드 시 아티팩트를 S3에 저장한다.</p>
+
+<h2 id="1-codecommit">1. CodeCommit</h2>
+<ul>
+  <li>소스코드를 이용, codecommit 에 repository를 생성한다.</li>
+  <li>소스코드를 형상관리하던 branch 에 push 가 발생하면 자동으로 codecommit repository 로 push 되도록 연결한다.</li>
+</ul>
+
+<h2 id="2-codebuild">2. CodeBuild</h2>
+<ul>
+  <li>codebuild.json
+    <ul>
+      <li>빌드 프로젝트의 속성을 설정하는 파일이다. json 파일을 이용하여 CLI로 업데이트 가능하다.</li>
+    </ul>
+  </li>
+</ul>
+
+<details>
+<summary>example code</summary>
+<div>
+
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;project-name&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;description&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CODECOMMIT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;source-location&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gitCloneDepth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"buildspec"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buildspec.yml"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"InsecureSsl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reportBuildStatus"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gitSubmodulesConfig"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"fetchSubmodules"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"artifacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S3"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"s3-bucket-name"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;artifacts-path&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"namespaceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUILD_ID"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;artifacts-name&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"overrideArtifactName"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"packaging"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONE"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"cache"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;cache-type&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;cache-location&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"&lt;cache-mode&gt;"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"environment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LINUX_CONTAINER"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aws/codebuild/amazonlinux2-x86_64-standard:2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"computeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUILD_GENERAL1_SMALL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"imagePullCredentialsType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SERVICE_ROLE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"privilegedMode"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"serviceRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;service-role&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"timeoutInMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"queuedTimeoutInMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"vpcConfig"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"securityGroupIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+         </span><span class="s2">"&lt;security-group-id&gt;"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"subnets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+         </span><span class="s2">"&lt;subnet-id&gt;"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"vpcId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;vpc-id&gt;"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"badgeEnabled"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;badge-enabled&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"logsConfig"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"cloudWatchLogs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;cloudwatch-logs-status&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"groupName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;group-name&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"streamName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;stream-name&gt;"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"s3Logs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;s3-logs-status&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;s3-logs-location&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"encryptionDisabled"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;s3-logs-encryption-disabled&gt;"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"concurrentBuildLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </div>
+</details>
+
+<table>
+  <thead>
+    <tr>
+      <th>key</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>artifacts/location</td>
+      <td>아티팩트를 저장할 S3 bucket name</td>
+    </tr>
+    <tr>
+      <td>artifacts/namespaceType</td>
+      <td>(N)BUILD_ID가 아티팩트 이름 앞에 지정된다</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>buildspec.yml
+    <ul>
+      <li>codecommit repository의 최상단에 해당 파일을 저장하여 push 한다</li>
+    </ul>
+  </li>
+</ul>
+
+<details>
+<summary>example code</summary>
+<div>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="m">0.2</span>
+
+<span class="na">phases</span><span class="pi">:</span>
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="na">commands</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">echo Building ...</span> 
+      <span class="pi">-</span> <span class="s">echo $CODEBUILD_SRC_DIR</span>
+      <span class="pi">-</span> <span class="s">echo $CODEBUILD_BUILD_NUMBER</span>
+<span class="na">artifacts</span><span class="pi">:</span>
+  <span class="na">files</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">location</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">artifact-name</span>
+  <span class="na">discard-paths</span><span class="pi">:</span> <span class="s">no | yes</span>
+  <span class="na">base-directory</span><span class="pi">:</span> <span class="s">location</span>
+  <span class="na">exclude-paths</span><span class="pi">:</span> <span class="s">excluded paths</span>
+  <span class="na">enable-symlinks</span><span class="pi">:</span> <span class="s">no | yes</span>
+  <span class="na">s3-prefix</span><span class="pi">:</span> <span class="s">prefix</span>
+</code></pre></div>    </div>
+  </div>
+</details>
+
+<table>
+  <thead>
+    <tr>
+      <th>key</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>version</td>
+      <td>AWS 0.2를 권장한다</td>
+    </tr>
+    <tr>
+      <td>phases</td>
+      <td>install, pre_build, build, post_build 로 나뉘고 사용될 명령어를 기재한다</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>필요한 환경변수들도 가져다 쓸 수 있다</li>
+</ul>
+
+<h2 id="2-1-troubleshooting">2-1. Troubleshooting</h2>
+
+<h3 id="error-code">Error code:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Phase context status code: CLIENT_ERROR Message: no matching artifact paths found
+</code></pre></div></div>
+
+<h3 id="solution">Solution:</h3>
+
+<p>searching …</p>
+:ET

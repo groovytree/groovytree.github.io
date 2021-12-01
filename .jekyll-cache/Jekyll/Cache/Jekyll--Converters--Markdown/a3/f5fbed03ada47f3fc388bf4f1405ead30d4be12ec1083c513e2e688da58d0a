@@ -1,0 +1,11 @@
+I"R<h2 id="situation">Situation:</h2>
+<p>클러스터 운영 시간에 따라 자동 시작/중지 시간을 설정하고자 한다.
+Stop: 20시
+Start: 6시 30분</p>
+
+<h2 id="solution">Solution:</h2>
+<p>redshift-pause: 0 19 ? * MON-FRI *
+redshift-resume: 30 21 ? * MON-FRI *</p>
+
+<p>Cron식으로 KST -9 하여 UTC 로 표현합니다.</p>
+:ET

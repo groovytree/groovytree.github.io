@@ -1,0 +1,9 @@
+I"L<h2 id="error-code">Error Code:</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No route to any external sources detected in Route Table for Subnet
+오류로 종료 상태 The VPC/subnet configuration was invalid: No route to any external sources detected in Route Table for Subnet: subnet-xxxxxxx for VPC: vpc-xxxxxxx
+</code></pre></div></div>
+
+<h2 id="solution">Solution:</h2>
+<p>라우팅 테이블에 인터넷 게이트웨이 연결
+라우팅 편집에서 대상을 인터넷 게이트웨이로 선택하여 ICDR 생성</p>
+:ET

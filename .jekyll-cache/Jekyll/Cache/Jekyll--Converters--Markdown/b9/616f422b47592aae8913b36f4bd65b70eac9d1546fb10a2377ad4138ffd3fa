@@ -1,0 +1,4 @@
+I"W<h2 id="error-code">Error Code:</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The requested instance type c4.large is not supported in the requested availability zone. Learn more at https://docs.aws.amazon.com/console/elasticmapreduce/ERROR_noinstancetype
+</code></pre></div></div>
+:ET
