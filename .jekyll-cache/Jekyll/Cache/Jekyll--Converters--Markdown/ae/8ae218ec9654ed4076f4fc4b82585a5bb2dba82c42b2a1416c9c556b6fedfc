@@ -1,4 +1,4 @@
-I"W<p>데이터베이스 성능 비교의 중점은 Computing, Storage, 기능, 가격</p>
+I"�	<p>데이터베이스 성능 비교의 중점은 Computing, Storage, 기능, 가격</p>
 
 <h2 id="반구조데이터-처리">반구조데이터 처리</h2>
 <p>반구조화 데이터(semi-structured data);</p>
@@ -17,14 +17,9 @@
   </li>
 </ul>
 
-<h2 id="공통점">공통점</h2>
-<p>두 개의 데이터베이스 모두 MPP(Massively Parellel Processing), 대규모 병렬처리가 가능한 비공유 아키텍처(Shared Nothing) 이며, 이에 대한 장/단점을 그대로 가지고 있다.</p>
+<h2 id="아키텍처">아키텍처</h2>
 <ul>
-  <li>성능과 확장성: RDB로서 ACID를 보장하며 노드를 선형적으로 확장할 수 있음</li>
-  <li>메모리와 운영체제를 공유하지 않기 때문에 데이터 병목현상이 없고 노드를 추가하기 쉽다</li>
-  <li>각 노드에 데이터가 분할되어 관리되기 때문에 읽기/쓰기에 대한 처리 시 경합이 줄어든다</li>
-  <li>모든 노드에서 쓰기가 가능하여 전통 RDB에서 지니던 쓰기 확장성이 가능하다 -&gt; Scale Out</li>
-  <li>No PK/FK</li>
+  <li>Redshift: 전통적인 DBMS의 특징인 비공유 아키텍처(Shared Nothing), MPP(Massively Parellel Processing)</li>
 </ul>
 
 <!--

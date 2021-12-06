@@ -1,0 +1,55 @@
+I"�<h2 id="key-capabilities">Key capabilities</h2>
+<ol>
+  <li>전통DB에서 처리하는 Relational DB, 관계형DB가 아니다.</li>
+  <li>PK/FK (Primary Key/Foreign Key) 제약이 없습니다.</li>
+  <li>No indexing / No performance tuninig / no partitioning / no physical storage design</li>
+</ol>
+
+<h2 id="architecture">Architecture</h2>
+<ul>
+  <li>Cloud service layer
+    <ul>
+      <li>메타데이터를 관리, 자동성능최적화, 보안, 트랜잭션관리, 동시확장성 관리</li>
+      <li>query 의 que 부하에 따라 scale up/down 을 결정한다</li>
+    </ul>
+  </li>
+  <li>Virtual Warehouse - compute only layer
+    <ul>
+      <li>Database Layer (using DDL), dml?</li>
+      <li>테이블 데이터를 로딩하는 것, 데이터베이스 생성, 스키마 생성, 테이블 생성 등의 작업이 S3 에 저장된 데이터를 기반으로 하고, snowflake는 computing layer 와 storage layer (S3) 가 완벽하게 구분되어 있기 때문에 위의 작업 중에는 compute cost 가 들지 않는다. (비용, 시간, 성능)</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>end user -&gt;</td>
+              <td>Amazon EC2 / Pay per use for Compute -&gt;</td>
+              <td>Aamzon S3 / Pay per use for Storage</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Virtual Machine -&gt; Virtual Warehouse</td>
+              <td>완전한 클라우드 기반의 virtual warehouse (VW) 명명.</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>VW의 다양한 사이즈와 노드개수</li>
+      <li>VW 러닝 중에만 compute cost 할당</li>
+      <li>VW 의 concurrency scale up/down</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="비용">비용</h2>
+<ul>
+  <li>architecture 에서 compute, storage 양에 따른 비용이 대부분이다.</li>
+</ul>
+
+<h2 id="참고">참고</h2>
+<p><img src="//www.youtube.com/watch?v=dxrEHqMFUWI" alt="" /></p>
+:ET

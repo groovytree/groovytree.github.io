@@ -1,0 +1,5 @@
+I"�<h2 id="architecture">Architecture</h2>
+<ul>
+  <li>computing layer 와 storage layer 의 완벽한 분리. EMR, DataBrick, Snowflake 가 같은 아키텍처.</li>
+</ul>
+:ET

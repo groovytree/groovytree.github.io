@@ -3,7 +3,7 @@ layout: post
 title: Database - Snowflake vs Redshift
 subtitle: Difference on Cloud Computing
 categories: DB
-tags: [AWS, DB, cloudDB, Snowflake, Redshift, Docs]
+tags: [AWS, DB, Snowflake, Redshift, Docs]
 ---
 
 데이터베이스 성능 비교의 중점은 Computing, Storage, 기능, 가격
@@ -18,13 +18,9 @@ tags: [AWS, DB, cloudDB, Snowflake, Redshift, Docs]
 > SUPER 데이터 유형; 스키마 없는 데이터를 배열/구조를 저장할 수 있는 Redshift 만의 데이터 유형
 
 
-## 공통점
-두 개의 데이터베이스 모두 MPP(Massively Parellel Processing), 대규모 병렬처리가 가능한 비공유 아키텍처(Shared Nothing) 이며, 이에 대한 장/단점을 그대로 가지고 있다. 
-- 성능과 확장성: RDB로서 ACID를 보장하며 노드를 선형적으로 확장할 수 있음
-- 메모리와 운영체제를 공유하지 않기 때문에 데이터 병목현상이 없고 노드를 추가하기 쉽다
-- 각 노드에 데이터가 분할되어 관리되기 때문에 읽기/쓰기에 대한 처리 시 경합이 줄어든다
-- 모든 노드에서 쓰기가 가능하여 전통 RDB에서 지니던 쓰기 확장성이 가능하다 -> Scale Out
-- No PK/FK 
+## 아키텍처
+- Redshift: 전통적인 DBMS의 특징인 비공유 아키텍처(Shared Nothing), MPP(Massively Parellel Processing)
+
 
 <!--
 # External Table 로딩 기술 (대용량 데이터 로딩 기술) 

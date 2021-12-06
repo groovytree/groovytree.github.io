@@ -1,4 +1,4 @@
-I"�/<h2 id="내용">내용</h2>
+I"2<h2 id="내용">내용</h2>
 <p>codepipeline을 구축하여 repository에 code를 형상관리, 빌드 시 아티팩트를 S3에 저장한다.</p>
 
 <h2 id="1-codecommit">1. CodeCommit</h2>
@@ -171,5 +171,9 @@
 
 <h3 id="solution">Solution:</h3>
 
-<p>searching …</p>
+<ul>
+  <li>codebuild.json 의 빌드 프로젝트 - artifact 설정에 path 는 S3 아티팩트 결과물을 저장하는 위치를 지칭한다.</li>
+  <li>buildspec.yml 의 artifact - file: / location 은 빌드가 실행되는 temp 소스의 위치를 지정한다. ‘<em>*/</em>’ 설정은 소스 폴더의 집약적인 지칭이다.</li>
+  <li>buildspec.yml 의 artifact - name 에 지정한 이름으로 타겟 결과물 파일/폴더를 생성하고 싶을 경우, 콘솔에서 Enable semantic versioning 을 체크하거나 codebuild.json 에서 artifacts/name 에 overrideArtifactName Flag 를 설정해야 한다.</li>
+</ul>
 :ET

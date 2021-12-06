@@ -1,0 +1,45 @@
+I"�<h2 id="create-warehouse">Create Warehouse</h2>
+<ul>
+  <li>Auto Suspend: 아무 activity가 없을 경우 해당 초/ 분 기다린 후, 자동으로 suspend 되어 비용 청구가 되지 않음</li>
+  <li>Auto Resume: check. suspend가 되어 있어도 다음 쿼리가 들어오면 자동 resume 되는 기능.</li>
+</ul>
+
+<h2 id="data-handling">Data handling</h2>
+<ul>
+  <li>외부 버킷에 데이터가 스테이징 되어 있고, create table 을 통해서 데이터를 DB 에 저장한다. 이후 copy 명령문으로 데이터를 로드하여 사용함</li>
+</ul>
+
+<h2 id="명령문">명령문</h2>
+<h3 id="zero-copy-cloning">Zero copy cloning</h3>
+<ul>
+  <li>생성
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- make a copy of our current state PRD db to use as DEV </span>
+<span class="k">create</span> <span class="k">or</span> <span class="k">replace</span> <span class="k">database</span> <span class="n">dev</span> <span class="n">clone</span> <span class="n">prd</span><span class="p">;</span>
+<span class="c1">-- also make a DEV warehouse so our DEV queries are isolated from PRD</span>
+<span class="k">create</span> <span class="n">warehouse</span> <span class="n">if</span> <span class="k">not</span> <span class="k">exists</span> <span class="n">dev_wh</span> <span class="n">warehouse_size</span> <span class="o">=</span> <span class="s1">'medium'</span> <span class="n">auto_suspend</span> <span class="o">=</span> <span class="mi">300</span> <span class="n">initially_suspended</span><span class="o">=</span><span class="k">true</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>삭제
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">drop</span> <span class="k">database</span> <span class="n">dev</span><span class="p">;</span>
+<span class="k">drop</span> <span class="n">warehouse</span> <span class="n">dev_wh</span><span class="p">;</span>
+<span class="n">use</span> <span class="n">schemas</span> <span class="n">prd</span><span class="p">;</span>
+<span class="n">use</span> <span class="n">warehouse</span> <span class="n">load_wh</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="데이터-로드">데이터 로드</h3>
+<ul>
+  <li>외부 S3 스테이징 데이터 리스트 조회
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list</span> <span class="o">@</span><span class="n">citibike</span><span class="p">.</span><span class="k">public</span><span class="p">.</span><span class="n">weather</span><span class="o">/</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>반정형 데이터 조회
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="err">$</span><span class="mi">1</span> <span class="k">from</span> <span class="o">@</span><span class="n">citibike</span><span class="p">.</span><span class="k">public</span><span class="p">.</span><span class="n">weather</span><span class="o">/</span><span class="mi">2019</span><span class="o">/</span> <span class="k">limit</span> <span class="mi">20</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="참고">참고</h2>
+<p>https://resources.snowflake.com/</p>
+:ET

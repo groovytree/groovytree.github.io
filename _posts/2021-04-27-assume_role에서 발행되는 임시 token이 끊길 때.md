@@ -3,7 +3,7 @@ layout: post
 title: assume_role 에서 발행되는 임시 token이 끊길 때
 subtitle: The provided token has expired
 categories: AWS
-tags: [AWS, SDK, Role Switching, boto3, Troubleshooting]
+tags: [AWS, SDK, Troubleshooting]
 ---
 
 ## Error Code:

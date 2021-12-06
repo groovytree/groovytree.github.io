@@ -3,7 +3,7 @@ layout: post
 title: Routing setting for EMR
 subtitle: EMR 띄우는 과정 중 발생 에러
 categories: AWS
-tags: [AWS, EMR, Provisioning, Network, Troubleshooting]
+tags: [AWS, EMR, Troubleshooting]
 ---
 
 ## Error Code:
