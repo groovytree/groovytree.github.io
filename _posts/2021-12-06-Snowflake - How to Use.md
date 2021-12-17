@@ -6,6 +6,21 @@ categories: DB
 tags: [DB, Snowflake, Docs]
 ---
 
+## Web UI
+- partner connect
+	- partner 사의 데이터를 연동하고자 할 때 사용 
+- Help
+	- command line tool download
+	- community 연결
+	- technical support 
+- role change
+
+## 데이터 로드
+- 정형/반정형 데이터의 압축률은 조금 다르고
+- json 은 10배 압축, csv는 4배 압축됨.
+- 압축된 데이터를 기준으로 비용 청구
+
+
 ## Create Warehouse
 - Auto Suspend: 아무 activity가 없을 경우 해당 초/ 분 기다린 후, 자동으로 suspend 되어 비용 청구가 되지 않음
 - Auto Resume: check. suspend가 되어 있어도 다음 쿼리가 들어오면 자동 resume 되는 기능. 
@@ -44,3 +59,5 @@ select $1 from @citibike.public.weather/2019/ limit 20;
 
 ## 참고
 https://resources.snowflake.com/
+
+

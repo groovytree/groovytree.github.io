@@ -1,0 +1,16 @@
+I"[<h2 id="error-code">Error Code</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**Unable to import module 'lambda_function': No module names lambda_function**
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Runtime.HandlerNotFound: idnex.handler is undefined or not exported
+</code></pre></div></div>
+
+<h2 id="solutions">Solutions</h2>
+
+<ol>
+  <li>Lambda Runtime settings</li>
+  <li>Handler 를 Edit</li>
+  <li>fileName.handlerName 으로 수정한다</li>
+</ol>
+:ET

@@ -1,4 +1,28 @@
-I"�<h2 id="create-warehouse">Create Warehouse</h2>
+I"�<h2 id="web-ui">Web UI</h2>
+<ul>
+  <li>partner connect
+    <ul>
+      <li>partner 사의 데이터를 연동하고자 할 때 사용</li>
+    </ul>
+  </li>
+  <li>Help
+    <ul>
+      <li>command line tool download</li>
+      <li>community 연결</li>
+      <li>technical support</li>
+    </ul>
+  </li>
+  <li>role change</li>
+</ul>
+
+<h2 id="데이터-로드">데이터 로드</h2>
+<ul>
+  <li>정형/반정형 데이터의 압축률은 조금 다르고</li>
+  <li>json 은 10배 압축, csv는 4배 압축됨.</li>
+  <li>압축된 데이터를 기준으로 비용 청구</li>
+</ul>
+
+<h2 id="create-warehouse">Create Warehouse</h2>
 <ul>
   <li>Auto Suspend: 아무 activity가 없을 경우 해당 초/ 분 기다린 후, 자동으로 suspend 되어 비용 청구가 되지 않음</li>
   <li>Auto Resume: check. suspend가 되어 있어도 다음 쿼리가 들어오면 자동 resume 되는 기능.</li>
@@ -28,7 +52,7 @@
   </li>
 </ul>
 
-<h3 id="데이터-로드">데이터 로드</h3>
+<h3 id="데이터-로드-1">데이터 로드</h3>
 <ul>
   <li>외부 S3 스테이징 데이터 리스트 조회
     <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list</span> <span class="o">@</span><span class="n">citibike</span><span class="p">.</span><span class="k">public</span><span class="p">.</span><span class="n">weather</span><span class="o">/</span><span class="p">;</span>
@@ -42,4 +66,5 @@
 
 <h2 id="참고">참고</h2>
 <p>https://resources.snowflake.com/</p>
+
 :ET
