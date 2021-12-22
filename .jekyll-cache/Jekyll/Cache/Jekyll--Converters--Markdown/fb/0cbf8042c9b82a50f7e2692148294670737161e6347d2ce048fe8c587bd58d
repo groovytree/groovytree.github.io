@@ -1,0 +1,5 @@
+I"e<h2 id="error-code">Error Code</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'bind' address already in use eaddrinuse 
+</code></pre></div></div>
+<p>블로그 서버를 로컬로 실행하고 Ctrl + C 로 정상종료되지 않았을 때, 서버를 재실행하면 위 에러가 발생한다.</p>
+:ET
