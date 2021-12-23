@@ -7,7 +7,7 @@ tags: [AWS, SDK, Troubleshooting]
 ---
 
 ## Error Code:
-```
+```python
 raise error_class(parsed_response, operation_name)
 botocore.exceptions.ClientError: An error occurred (ExpiredToken) when calling the ListObjects operation: The provided token has expired.
 ```

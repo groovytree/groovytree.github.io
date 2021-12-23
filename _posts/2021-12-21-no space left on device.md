@@ -7,7 +7,7 @@ tags: [AWS, EC2, Troubleshooting]
 ---
 
 ## Error Code
-```
+```bash
 failed to register layer: Error processing tar file(exit status 1): write /usr/local/lib/python3.5/dist-packages/tensorflow/python/_pywrap_tensorflow_internal.so: no space left on device
 ```
 ![Foo](/assets/images/posts/2021-12-21/1.png)
