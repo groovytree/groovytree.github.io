@@ -1,0 +1,41 @@
+I"�<ol>
+  <li>컨테이너</li>
+</ol>
+
+<p>docker Hub 에서 이미지 검색하기</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker search <span class="o">[</span>검색어]
+</code></pre></div></div>
+
+<p>이미지 pull 받기</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker pull <span class="o">[</span>image name]:[image tag]
+</code></pre></div></div>
+
+<p>이미지 목록화</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker images
+</code></pre></div></div>
+
+<p>구동중인 컨테이너의 리스트 반환</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker ps 
+</code></pre></div></div>
+
+<p>구동/종료된 컨테이너의 모든 리스트 반환</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker ps <span class="nt">-a</span>
+</code></pre></div></div>
+
+<p>새 컨테이너에서 run 명령어 실행</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-i</span> <span class="nt">-t</span> <span class="nt">--rm</span>
+</code></pre></div></div>
+<p>-i: interactive
+-t: tty
+–name: 이름 지정, 없으면 자동 생성
+-d: 백그라운드 모드로 실행</p>
+
+<p>컨테이너 중지/ 시작/ 재시작</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker stop/ start/ restart
+</code></pre></div></div>
+
+<p>컨테이너 이미지 저장</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker commit <span class="o">[</span>컨테이너 이름] <span class="o">[</span>저장할 username]/[저장할 이름]:[태그]
+docker push <span class="o">[</span>username]/[name]:[tag]
+</code></pre></div></div>
+:ET

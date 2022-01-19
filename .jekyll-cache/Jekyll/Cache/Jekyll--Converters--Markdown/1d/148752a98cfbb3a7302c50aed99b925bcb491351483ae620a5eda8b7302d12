@@ -1,0 +1,16 @@
+I"Ø<h2 id="error">Error</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> bundle <span class="nb">exec </span>jekyll serve <span class="nt">--trace</span> 
+Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+	2: from /usr/bin/bundle:23:in <span class="sb">`</span>&lt;main&gt;<span class="s1">'
+	1: from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems.rb:302:in `activate_bin_path'</span>
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems.rb:283:in <span class="sb">`</span>find_spec_for_exe<span class="s1">': Could not find '</span>bundler<span class="s1">' (2.2.31) required by your /Users/User_name/groovytree.github.io/Gemfile.lock. (Gem::GemNotFoundException)
+To update to the latest version installed on your system, run `bundle update --bundler`.
+To install the missing version, run `gem install bundler:2.2.31`
+</span></code></pre></div></div>
+
+<h2 id="solution">Solution</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>bundler:2.2.31
+</code></pre></div></div>
+
+:ET

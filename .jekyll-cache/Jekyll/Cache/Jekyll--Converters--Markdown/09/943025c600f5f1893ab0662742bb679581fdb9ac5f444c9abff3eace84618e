@@ -1,7 +1,0 @@
-I"<h2 id="error-code">Error Code:</h2>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Connection timed out connect:
-Communications link failure
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	Connection timed out: connect
-</code></pre></div></div>
-:ET

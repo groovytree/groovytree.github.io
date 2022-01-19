@@ -1,0 +1,120 @@
+I"�<p>Chapter 2. 머신러닝 처음부터 끝까지</p>
+
+<ol>
+  <li>환경 세팅하기
+목표: AWS EC2에 주피터노트북을 설치하고 웹화면으로 접속하여 테스트환경을 구축함</li>
+</ol>
+
+<p>1-1. EC2
+system: ubuntu 20.04
+Instance: t2.2xlarge/ 8 CPU / 32 RAM</p>
+
+<p>1-2. python install</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>software-properties-common
+<span class="nb">sudo </span>add-apt-repository ppa:deadsnakes/ppa
+<span class="nb">sudo </span>apt <span class="nb">install </span>python3.7
+</code></pre></div></div>
+
+<p>ubuntu 18.04 버전에서 install software-properties-common, repository ppa ~ 에 대한 설정 없이 install python3.7을 바로 진행하고 주피터를 설치했더니 아래 같은 어려움이 생겼었다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu@ip-10-0-1-208:~<span class="nv">$ </span>jupyter <span class="nt">--version</span>
+/home/ubuntu/.local/lib/python3.6/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: 0.18ubuntu0.18.04.1 is an invalid version and will not be supported <span class="k">in </span>a future release
+  PkgResourcesDeprecationWarning,
+4.4.0
+ubuntu@ip-10-0-1-208:~<span class="nv">$ </span>jupyter notebook
+/home/ubuntu/.local/lib/python3.6/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: 0.18ubuntu0.18.04.1 is an invalid version and will not be supported <span class="k">in </span>a future release
+  PkgResourcesDeprecationWarning,
+Error executing Jupyter <span class="nb">command</span> <span class="s1">'notebook'</span>: <span class="o">[</span>Errno 2] No such file or directory
+</code></pre></div></div>
+
+<p>설치 확인</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.7 <span class="nt">-v</span>
+</code></pre></div></div>
+
+<p>1-3. pip install</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>python3-pip
+</code></pre></div></div>
+
+<p>1-4. jupyter install</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip3 <span class="nb">install </span>jupyter
+jupyter <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p>Error code:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Command <span class="s1">'jupyter'</span> not found, but can be installed with:
+
+<span class="nb">sudo </span>apt <span class="nb">install </span>jupyter-core
+</code></pre></div></div>
+<p>jupyter-core를 설치한다</p>
+
+<p>ubuntu 20.04 에서 아래같은 에러가 있었는데, 1-5에 환경설정 파일을 생성하니 서버가 잘 구동됐다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu@ip-10-0-1-195:~<span class="nv">$ </span>jupyter <span class="nt">--version</span>
+jupyter core     : 4.6.3
+jupyter-notebook : 6.4.6
+qtconsole        : 5.2.2
+ipython          : 7.31.0
+ipykernel        : 6.6.1
+jupyter client   : 7.1.0
+jupyter lab      : not installed
+nbconvert        : 6.4.0
+ipywidgets       : 7.6.5
+nbformat         : 5.1.3
+traitlets        : 4.3.3
+ubuntu@ip-10-0-1-195:~<span class="nv">$ </span>jupyter notebook
+Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+  File <span class="s2">"/usr/bin/jupyter"</span>, line 11, <span class="k">in</span> &lt;module&gt;
+    load_entry_point<span class="o">(</span><span class="s1">'jupyter-core==4.6.3'</span>, <span class="s1">'console_scripts'</span>, <span class="s1">'jupyter'</span><span class="o">)()</span>
+  File <span class="s2">"/usr/lib/python3/dist-packages/jupyter_core/command.py"</span>, line 247, <span class="k">in </span>main
+    <span class="nb">command</span> <span class="o">=</span> _jupyter_abspath<span class="o">(</span>subcommand<span class="o">)</span>
+  File <span class="s2">"/usr/lib/python3/dist-packages/jupyter_core/command.py"</span>, line 133, <span class="k">in </span>_jupyter_abspath
+    raise Exception<span class="o">(</span>
+Exception: Jupyter <span class="nb">command</span> <span class="sb">`</span>jupyter-notebook<span class="sb">`</span> not found.
+</code></pre></div></div>
+
+<p>1-5. jupyter run</p>
+
+<p>환경설정 파일 생성
+sha는 위 generate config 시 보여주므로 반드시 복사해둔다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter notebook <span class="nt">--generate-config</span>
+</code></pre></div></div>
+
+<p>환경파일에 vi 로 들어가서 아래처럼 설정을 더한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c <span class="o">=</span> get_config<span class="o">()</span>
+c.NotebookApp.password <span class="o">=</span> u<span class="s1">'sha'</span>
+c.NotebookApp.ip <span class="o">=</span> <span class="s1">'EC2-Private IP Address'</span>
+c.NotebookApp.notebook_dir <span class="o">=</span> <span class="s1">'/home/ubuntu'</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter notebook
+</code></pre></div></div>
+
+<p>주피터를 실행할 수 있다.</p>
+
+<p>실행환경 config 파일을 선택하여 실행하고자 할 경우,</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter notebook <span class="nt">--config</span> jupyter_notebook_config.py
+</code></pre></div></div>
+
+<p>현재 실행중인 주피터 서버 리스팅/ 삭제</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter notebook list
+jupyter notebook stop 8888
+</code></pre></div></div>
+
+<p>노트북 서버 구동시 패스워드 설정</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter notebook password
+</code></pre></div></div>
+
+<p>ec2 환경에서 주피터 서버를 열고 로컬에서 웹브라우저로 접속할 경우, ec2의 퍼블릭 ip와 주피터 서버에 설정한 포트로 접속하면 된다. ec2 에 해당 포트에 대한 오픈 설정은 sg에서 하면 되고..</p>
+
+:ET

@@ -1,0 +1,15 @@
+I"¿<h2 id="error">Error</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> bundle <span class="nb">exec </span>jekyll serve <span class="nt">--trace</span>
+Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+        2: from /usr/bin/bundle:23:in <span class="sb">`</span>&lt;main&gt;<span class="s1">'
+        1: from /Library/Ruby/Site/2.6.0/rubygems.rb:284:in `activate_bin_path'</span>
+/Library/Ruby/Site/2.6.0/rubygems.rb:265:in <span class="sb">`</span>find_spec_for_exe<span class="s1">': can'</span>t find gem bundler <span class="o">(&gt;=</span> 0.a<span class="o">)</span> w
+</code></pre></div></div>
+
+<h2 id="solutions">Solutions</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">rm </span>Gemfile.lock
+bundle <span class="nb">install</span>
+</code></pre></div></div>
+
+:ET

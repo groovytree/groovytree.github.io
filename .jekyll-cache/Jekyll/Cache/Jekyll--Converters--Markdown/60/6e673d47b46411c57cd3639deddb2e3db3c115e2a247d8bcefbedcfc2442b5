@@ -1,0 +1,5 @@
+I"(<h2 id="error-code">Error Code:</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">raise</span> <span class="n">error_class</span><span class="p">(</span><span class="n">parsed_response</span><span class="p">,</span> <span class="n">operation_name</span><span class="p">)</span>
+<span class="n">botocore</span><span class="p">.</span><span class="n">exceptions</span><span class="p">.</span><span class="n">ClientError</span><span class="p">:</span> <span class="n">An</span> <span class="n">error</span> <span class="n">occurred</span> <span class="p">(</span><span class="n">ExpiredToken</span><span class="p">)</span> <span class="n">when</span> <span class="n">calling</span> <span class="n">the</span> <span class="n">ListObjects</span> <span class="n">operation</span><span class="p">:</span> <span class="n">The</span> <span class="n">provided</span> <span class="n">token</span> <span class="n">has</span> <span class="n">expired</span><span class="p">.</span>
+</code></pre></div></div>
+:ET

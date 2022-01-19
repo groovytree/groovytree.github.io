@@ -1,5 +1,0 @@
-I"b<h2 id="error-code">Error Code:</h2>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>raise error_class(parsed_response, operation_name)
-botocore.exceptions.ClientError: An error occurred (ExpiredToken) when calling the ListObjects operation: The provided token has expired.
-</code></pre></div></div>
-:ET

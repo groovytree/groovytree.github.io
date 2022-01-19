@@ -1,0 +1,28 @@
+I"�<h2 id="error">Error</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'bind'</span> address already <span class="k">in </span>use eaddrinuse 
+</code></pre></div></div>
+<p>블로그 서버를 로컬로 실행하고 Ctrl + C 로 정상종료되지 않았을 때, 서버를 재실행하면 위 에러가 발생한다.</p>
+
+<h2 id="solution">Solution</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lsof <span class="nt">-i</span> TCP:4000
+</code></pre></div></div>
+<p>해당 포트로 연결되어 있는 프로세스를 리스트화하여 
+ruby 로 실행되고 있고, 확실하게 종료되지 않은 프로세스를 제대로 종료한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">kill</span> <span class="nt">-9</span> <span class="o">(</span>PID<span class="o">)</span>
+</code></pre></div></div>
+
+<p>재실행하면 서버가 잘 구동된다</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll serve <span class="nt">--trace</span>
+</code></pre></div></div>
+
+<h2 id="4-error">4. Error</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> bundle <span class="nb">exec </span>jekyll serve <span class="nt">--trace</span>
+bundler: <span class="nb">command </span>not found: jekyll
+Install missing gem executables with <span class="sb">`</span>bundle <span class="nb">install</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<h2 id="solutions">Solutions</h2>
+
+:ET

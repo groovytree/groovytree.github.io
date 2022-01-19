@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Database - Snowflake vs Redshift
+title: Datawarehouse - Snowflake vs Redshift
 subtitle: Difference on Cloud Computing
 categories: DB
 tags: [AWS, DB, Snowflake, Redshift, Docs]

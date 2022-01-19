@@ -1,0 +1,23 @@
+I"¯<h2 id="error">Error</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> gem <span class="nb">install </span>bundler:2.2.31
+ERROR:  While executing gem ... <span class="o">(</span>Gem::FilePermissionError<span class="o">)</span>
+    You don<span class="s1">'t have write permissions for the /Library/Ruby/Gems/2.6.0 directory.
+</span></code></pre></div></div>
+
+<h2 id="solutions">Solutions</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>gem <span class="nb">install </span>bundler:2.2.31
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>bundler
+vim ~/.zshrc
+
+<span class="o">[[</span> <span class="nt">-d</span> ~/.rbenv <span class="o">]]</span> <span class="o">&amp;&amp;</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/.rbenv/bin:<span class="k">${</span><span class="nv">PATH</span><span class="k">}</span> <span class="o">&amp;&amp;</span>
+<span class="nb">eval</span> <span class="s2">"</span><span class="si">$(</span>rbenv init -<span class="si">)</span><span class="s2">"</span>
+
+<span class="nb">source</span> ~/.zshrc
+</code></pre></div></div>
+
+:ET

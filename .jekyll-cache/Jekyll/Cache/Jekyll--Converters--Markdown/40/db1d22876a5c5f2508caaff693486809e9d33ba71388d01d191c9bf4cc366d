@@ -1,0 +1,33 @@
+I"<h2 id="error-code">Error Code</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>failed to register layer: Error processing <span class="nb">tar </span>file<span class="o">(</span><span class="nb">exit </span>status 1<span class="o">)</span>: write /usr/local/lib/python3.5/dist-packages/tensorflow/python/_pywrap_tensorflow_internal.so: no space left on device
+</code></pre></div></div>
+<p><img src="/assets/images/posts/2021-12-21/1.png" alt="Foo" /></p>
+
+<p>도커를 pull 하는 도중에 에러가 났다. 용량이 부족했던 것 같다</p>
+
+<h2 id="solution">Solution</h2>
+
+<ol>
+  <li>현재 볼륨 상태를 확인했다</li>
+</ol>
+
+<p><img src="/assets/images/posts/2021-12-21/2.png" alt="Foo" /></p>
+
+<p><img src="/assets/images/posts/2021-12-21/3.png" alt="Foo" /></p>
+
+<ol>
+  <li>Elastic Volume 에서 Modify 기능으로 볼륨 사이즈를 100 G 올려서 수정했다.</li>
+</ol>
+
+<p><img src="/assets/images/posts/2021-12-21/4.png" alt="Foo" /></p>
+
+<ol>
+  <li>증설한 볼륨을 파티셔닝, 리사이즈 했다.</li>
+</ol>
+
+<p><img src="/assets/images/posts/2021-12-21/5.png" alt="Foo" /></p>
+
+<p><img src="/assets/images/posts/2021-12-21/6.png" alt="Foo" /></p>
+
+<p><img src="/assets/images/posts/2021-12-21/7.png" alt="Foo" /></p>
+:ET

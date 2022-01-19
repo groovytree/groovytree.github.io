@@ -1,0 +1,5 @@
+I"ý<h2 id="error-code">Error Code</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>failed to register layer: Error processing <span class="nb">tar </span>file<span class="o">(</span><span class="nb">exit </span>status 1<span class="o">)</span>: write /usr/local/lib/python3.5/dist-packages/tensorflow/python/_pywrap_tensorflow_internal.so: no space left on device
+</code></pre></div></div>
+<p><img src="/assets/images/posts/2021-12-21/1.png" alt="Foo" /></p>
+:ET
