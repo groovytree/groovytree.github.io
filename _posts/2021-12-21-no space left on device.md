@@ -1,9 +1,9 @@
 ---
 layout: post
-title: no space left on device
-subtitle: AWS ubuntu, resize volumne
+title: EC2 - no space left on device
+subtitle: resize volumne
 categories: AWS
-tags: [AWS, EC2, Troubleshooting]
+tags: [Troubleshooting, AWS EC2]
 ---
 
 ## Error Code

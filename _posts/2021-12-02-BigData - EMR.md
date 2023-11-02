@@ -1,9 +1,9 @@
 ---
 layout: post
-title: BigData - EMR
+title: EMR - BigData 처리에 대하여
 subtitle: EMR key capabilities
 categories: AWS
-tags: [Platform, BigData, Docs]
+tags: [Docs, AWS EMR]
 ---
 
 ## Architecture

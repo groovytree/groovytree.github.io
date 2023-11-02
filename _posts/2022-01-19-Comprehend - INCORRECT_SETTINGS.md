@@ -3,7 +3,7 @@ layout: post
 title: AWS Comprehend - INCORRECT_SETTINGS
 subtitle: 에러 해결방법
 categories: AWS
-tags: [AWS, Comprehend, Troubleshooting]
+tags: [Troubleshooting, AWS Comprehend]
 ---
 
 ## Error

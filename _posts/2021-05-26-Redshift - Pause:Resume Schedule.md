@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Redshift - Pause/Resume Schedule
-subtitle: Crontab으로 조정하기 
+subtitle: Crontab으로 스케줄 조정하기 
 categories: AWS
-tags: [AWS, Redshift, Docs]
+tags: [Docs, AWS Redshift]
 ---
 
 ## Situation:
@@ -15,4 +15,4 @@ Start: 6시 30분
 redshift-pause: 0 19 ? * MON-FRI *
 redshift-resume: 30 21 ? * MON-FRI *
 
-Cron식으로 KST -9 하여 UTC 로 표현합니다.
+Cron식으로 KST 에서 -9 하여 UTC 로 표현.

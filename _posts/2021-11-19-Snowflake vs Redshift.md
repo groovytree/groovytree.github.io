@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Datawarehouse - Snowflake vs Redshift
+title: DW - Snowflake vs Redshift
 subtitle: Difference on Cloud Computing
 categories: DB
-tags: [AWS, DB, Snowflake, Redshift, Docs]
+tags: [Docs, AWS Redshift, Snowflake]
 ---
 
 데이터베이스 성능 비교의 중점은 Computing, Storage, 기능, 가격

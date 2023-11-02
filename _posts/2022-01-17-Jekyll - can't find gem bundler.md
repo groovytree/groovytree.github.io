@@ -3,7 +3,7 @@ layout: post
 title: Jekyll Blog - can't find gem bundler
 subtitle: 깃허브 블로그 서버구동시 에러
 categories: Web
-tags: [Web, Jekyll, Troubleshooting]
+tags: [Troubleshooting, Jekyll]
 ---
 
 ## Error

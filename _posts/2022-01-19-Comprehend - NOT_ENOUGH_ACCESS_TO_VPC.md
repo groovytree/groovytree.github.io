@@ -3,7 +3,7 @@ layout: post
 title: AWS Comprehend - NOT_ENOUGH_ACCESS_TO_VPC
 subtitle: 에러 해결방법
 categories: AWS
-tags: [AWS, Comprehend, Troubleshooting]
+tags: [Troubleshooting, AWS Comprehend]
 ---
 
 ![Foo](/assets/images/posts/2022-01-19/1.png)

@@ -3,7 +3,7 @@ layout: post
 title: CodeCommit - Slack App Alarm
 subtitle: 코드업데이트 시 슬랙으로 알람 설정하기
 categories: AWS
-tags: [AWS, Codecommit, Docs]
+tags: [Docs, AWS CICD]
 ---
 
 ci-cd 파이프라인을 사용하여 코드관리와 배포를 한 번에 처리하면서, 알람을 설정하여 여러 사람에게 공유될 수 있도록 설정합니다.

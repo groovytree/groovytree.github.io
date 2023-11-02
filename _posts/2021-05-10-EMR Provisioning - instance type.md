@@ -1,9 +1,9 @@
 ---
 layout: post
-title: EMR Provisioning - instance type
-subtitle: c4.large type 서울 리전 지원
+title: AWS EMR - Provisioning
+subtitle: availability zone 
 categories: AWS
-tags: [AWS, EMR, Troubleshooting]
+tags: [Troubleshooting, AWS EMR, region, c4.large]
 ---
 
 ## Error Code:
@@ -12,4 +12,4 @@ The requested instance type c4.large is not supported in the requested availabil
 ```
 
 ## Solution:
-가용영역을 ap-northeast-2a 로 지정한 subnet 생성 후 재연결
+가용영역을 ap-northeast-2a 로 지정한 subnet 생성 후 재연결 성공함

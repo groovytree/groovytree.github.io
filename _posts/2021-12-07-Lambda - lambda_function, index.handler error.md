@@ -3,7 +3,7 @@ layout: post
 title: Lambda - lambda_function, index.handler error
 subtitle: Lambda 삽질의 기록
 categories: AWS
-tags: [AWS, Lambda, Troubleshooting]
+tags: [Troubleshooting, AWS Lambda]
 ---
 
 ## Error Code

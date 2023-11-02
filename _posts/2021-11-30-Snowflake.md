@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Datawarehouse - Snowflake
+title: DW - Snowflake
 subtitle: Snowflake key capabilities
 categories: DB
-tags: [DB, Snowflake, Docs]
+tags: [Docs, Snowflake]
 ---
 
 ## Key capabilities

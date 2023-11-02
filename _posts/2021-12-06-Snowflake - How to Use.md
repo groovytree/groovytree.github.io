@@ -3,7 +3,7 @@ layout: post
 title: Snowflake - How to Use
 subtitle: Snowflake key capabilities
 categories: DB
-tags: [DB, Snowflake, Docs]
+tags: [Docs, Snowflake]
 ---
 
 ## Web UI

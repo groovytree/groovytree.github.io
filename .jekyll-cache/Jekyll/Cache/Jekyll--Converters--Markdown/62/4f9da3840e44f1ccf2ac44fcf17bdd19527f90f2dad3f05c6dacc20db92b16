@@ -1,7 +1,0 @@
-I"�<h2 id="error-code">Error Code:</h2>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The requested instance type c4.large is not supported in the requested availability zone. Learn more at https://docs.aws.amazon.com/console/elasticmapreduce/ERROR_noinstancetype
-</code></pre></div></div>
-
-<h2 id="solution">Solution:</h2>
-<p>가용영역을 ap-northeast-2a 로 지정한 subnet 생성 후 재연결</p>
-:ET

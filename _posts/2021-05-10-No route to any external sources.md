@@ -1,10 +1,13 @@
 ---
 layout: post
-title: Routing setting for EMR
+title: No route to any external sources dextected in Route Table for Subnet
 subtitle: EMR 띄우는 과정 중 발생 에러
 categories: AWS
-tags: [AWS, EMR, Troubleshooting]
+tags: [Troubleshooting, AWS EMR, Network, route]
 ---
+
+## Situation:
+AWS EMR을 띄우는 도중 에러 코드 발생하여 네트워크 세팅 전반을 다시 살펴봄
 
 ## Error Code:
 ```
