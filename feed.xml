@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://groovytree.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://groovytree.github.io/" rel="alternate" type="text/html" /><updated>2023-11-03T00:19:26+00:00</updated><id>https://groovytree.github.io/feed.xml</id><title type="html">On my own feet, with someone</title><subtitle>Think big and dream big.</subtitle><author><name>RyuSihyeong</name></author><entry><title type="html">Python - HTTP</title><link href="https://groovytree.github.io/network/2023/11/01/Python-Network,-HTTP.html" rel="alternate" type="text/html" title="Python - HTTP" /><published>2023-11-01T00:00:00+00:00</published><updated>2023-11-01T00:00:00+00:00</updated><id>https://groovytree.github.io/network/2023/11/01/Python%20-%20Network,%20HTTP</id><content type="html" xml:base="https://groovytree.github.io/network/2023/11/01/Python-Network,-HTTP.html"><![CDATA[<h2 id="start">Start:</h2>
+
+<p>HTTP(HyperTextTransperProtocol) 개발자는 http:// 에 // 가 멋있어보여서 그냥 넣었다고 했다. 밀림의 왕자인 호랑이가 하는 거짓말은 아무리 간사한 여우라도 따라야 하는 법이다. 인터넷이라고 하는 멋진 곳에서 서버와 클라이이언트가 정보를 주고 받는 데에는 http, 프로토콜 등에 대한 배경 지식이 필요하다. python에서도 인터넷과 마찬가지로 built-in 으로 내장된 socket을 통해 데이터를 주고 받으면서 인터넷의 데이터를 쉽게 parse하고 이용할 수 있다.</p>
+
+<p><img src="/assets/images/posts/2023-11-01/1.png" alt="Foo" /></p>
+
+<p>사용될 application의 각 앞에 socket이 있는데, 이를 통해 네트워크간 통신이 가능하다. 소켓 하나에는 두 가지 기능이 있는데, 하나는 read 이고 다른 하나는 write 다. 그림의 1번 과정을 통해 내가 write한 데이터를 다른 소켓으로 전송한다. 2번 과정을 통해 내가 read 하는 데이터들은 다른 소켓으로부터 받아온 데이터임을 알 수 있다.</p>
+
+<p><img src="/assets/images/posts/2023-11-01/2.png" alt="Foo" /></p>
+
+<p>내 소켓이 계속 waiting 상태에 있다면 상대 소켓에서 데이터가 보내진 게 확실한지 확인해야 한다. python으로 프로그램을 짤 때, 두 개의 소켓이 계속해서 대기 상태를 지속하지 않도록 정밀하게 프로토콜을 짜야 한다. 프로토콜에는 정보를 보낸 자가 누구인지, 어떻게 언제 보냈는지 등의 정보를 기록할 수 있다.</p>
+
+<h2 id="references">References:</h2>
+<p>Python for Everybody</p>]]></content><author><name>RyuSihyeong</name></author><category term="Network" /><category term="Docs" /><category term="Network" /><category term="Python" /><summary type="html"><![CDATA[Start:]]></summary></entry><entry><title type="html">Airflow Documentation 요약</title><link href="https://groovytree.github.io/airflow/2022/03/14/Airflow-%EA%B0%9C%EB%B0%9C%EC%84%9C%EC%9A%94%EC%95%BD.html" rel="alternate" type="text/html" title="Airflow Documentation 요약" /><published>2022-03-14T00:00:00+00:00</published><updated>2022-03-14T00:00:00+00:00</updated><id>https://groovytree.github.io/airflow/2022/03/14/Airflow%20-%20%EA%B0%9C%EB%B0%9C%EC%84%9C%EC%9A%94%EC%95%BD</id><content type="html" xml:base="https://groovytree.github.io/airflow/2022/03/14/Airflow-%EA%B0%9C%EB%B0%9C%EC%84%9C%EC%9A%94%EC%95%BD.html"><![CDATA[<h2 id="home">HOME</h2>
+
+<ul>
+  <li>원칙: 사용적 역동성, 유연성, 확장성</li>
+  <li>파이썬 코드로 작성하여 스케줄 내용을 다양하게 사용할 수 있음. 나만의 오퍼레이터(operator)와 실행자(executor)를 쉽게 정의하고, 업무 환경의 추상화 레벨에 맞추어 라이브러리를 확장할 수 있다. 스크립트를 파라미터화하여 활용하려면 Jinja 템플릿 엔진을 이용하라. 메세지 큐를 이용해서 추상적인 작업자 수를 조정 지휘할 수 있다.</li>
+  <li>spark streaming 처럼 데이터를 직접 옮기는 것으로 착각하기 쉽습니다. 하지만 실제로는 meta data를 넘기는 것이므로 데이터를 변화시키지 않음.</li>
+</ul>]]></content><author><name>RyuSihyeong</name></author><category term="Airflow" /><category term="Docs" /><summary type="html"><![CDATA[HOME]]></summary></entry><entry><title type="html">Oracle - NLS와 Character Set</title><link href="https://groovytree.github.io/db/2022/03/14/Oracle-NLS%EC%99%80-Character-Set.html" rel="alternate" type="text/html" title="Oracle - NLS와 Character Set" /><published>2022-03-14T00:00:00+00:00</published><updated>2022-03-14T00:00:00+00:00</updated><id>https://groovytree.github.io/db/2022/03/14/Oracle%20-%20NLS%EC%99%80%20Character%20Set</id><content type="html" xml:base="https://groovytree.github.io/db/2022/03/14/Oracle-NLS%EC%99%80-Character-Set.html"><![CDATA[<h3 id="situation">Situation</h3>
+<ul>
+  <li>Oracle8</li>
+  <li>Oracle11</li>
+</ul>
+
+<h3 id="error">Error</h3>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">to_date</span><span class="p">(</span><span class="s1">'07-JUN-16'</span><span class="p">,</span><span class="s1">'DD-MON-RR'</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">DUAL</span> <span class="p">;</span>
+</code></pre></div></div>
+
+<p>위 sql을 사용할 경우 아래와 같은 에러가 발생.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Not a valid month
+</code></pre></div></div>
+<p>: 지정한 월이 부족합니다</p>
+
+<p>‘DD-MON-RR’은 day, 축약된 문자 월, 2자리로 표현되는 년도수 이다.<br /> 
+그런데 왜 위 같은 에러가 보일까?<br /></p>
+
+<p>찾아보니 language에 대한 DB 셋팅에서 display 되는 문자와 실제 저장되는 데이터 문자가 다르게 설정되어 있을 경우 dd-mon-rr 에서 오류가 발생한다고 한다.<br /> 
+mon 으로 축약된 문자를 읽어들이는 데 이를 한국어로 인식하기 때문이다. <br /></p>
+
+<p><img src="/assets/images/posts/2022-03-14/1.png" alt="Foo" /></p>
+
+<p>검색해서 이것저것 찾아보니 character set 과 language set 이란 용어도 있고 개념에 대해 알 필요가 있겠다 싶어 이에 대해 정리해보려고 한다.</p>
+
+<h3 id="solution">Solution</h3>
+
+<p>https://docs.oracle.com/cd/A87860_01/doc/server.817/a76966/ch1.htm</p>
+
+<p>Oracle8.1.7 의 NLS(Nature Languagee Support) 문서에 따르면, <br />
+ORA_NLS Environment Variable 을 설정하여 data 디렉토리에 multilingual DB 데이터에 대한 조각들이 각각 저장된다. 데이터는 다양한 언어를 포괄적으로 저장할 수 있고, 이 데이터의 처리와 함수사용, 사용자가 원하는 방식으로 출력되는 것이 가능하게 하는 것은 NLS 라이브러리의 지원이 있기 때문이라는 뜻이다.</p>
+
+<p>오라클의 클라이언트/서버가 통신할 때는 DB에 저장되는 텍스트 데이터를 지정하는 character set, language, territory 와 같은 파라미터를 서로 체크해서 데이터를 이동하거나 저장하게 된다.</p>
+
+<p>저장되는 데이터는 character set 설정 때문에 가능합니다. DBMS 는 오라클 서버 설치시에 이를 잘 선택해야 한다. 캐릭터셋 설정 값이 중간에 바뀌면, 이전에 저장된 데이터는 그 이전 버전으로, 이후에 저장되는 데이터는 변경값으로 저장된다.</p>
+
+<p>Character set 은 AL32UTF8(UTF-8) 로도 변경이 가능하다. 대부분의 경우는 오라클 인스톨러(OUI)에 의해 자동으로 설정되고, unix, linux 몇가지 ms 플랫폼은 utf-8 캐릭터셋 선택이 불가능하다. AMERICAN 으로 캐릭터셋이 설정되는 것이 default 인데 이 경우 default date format 도 ‘DD-MON-RR’ 이다.</p>
+
+<ul>
+  <li>nls_language 를 변경할 때
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">alter</span> <span class="k">session</span> <span class="k">set</span> <span class="n">nls_language</span> <span class="o">=</span> <span class="n">AMERICAN</span> <span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>]]></content><author><name>RyuSihyeong</name></author><category term="DB" /><category term="Troubleshooting" /><category term="Oracle" /><summary type="html"><![CDATA[Situation Oracle8 Oracle11]]></summary></entry><entry><title type="html">AWS Comprehend - INCORRECT_SETTINGS</title><link href="https://groovytree.github.io/aws/2022/01/19/Comprehend-INCORRECT_SETTINGS.html" rel="alternate" type="text/html" title="AWS Comprehend - INCORRECT_SETTINGS" /><published>2022-01-19T00:00:00+00:00</published><updated>2022-01-19T00:00:00+00:00</updated><id>https://groovytree.github.io/aws/2022/01/19/Comprehend%20-%20INCORRECT_SETTINGS</id><content type="html" xml:base="https://groovytree.github.io/aws/2022/01/19/Comprehend-INCORRECT_SETTINGS.html"><![CDATA[<h2 id="error">Error</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>INCORRECT_SETTINGS: One or more settings are incorrect. Please verify the VPC settings, S3 URIs, service limits, data access role and its permissions.
+</code></pre></div></div>
+
+<h2 id="solutions">Solutions</h2>
+
+<ol>
+  <li>Analysis jobs - Sentiment 로 잡을 생성하였다. 서비스 내 limits 확인</li>
+</ol>]]></content><author><name>RyuSihyeong</name></author><category term="AWS" /><category term="Troubleshooting" /><category term="AWS Comprehend" /><summary type="html"><![CDATA[Error]]></summary></entry><entry><title type="html">AWS Comprehend - NOT_ENOUGH_ACCESS_TO_VPC</title><link href="https://groovytree.github.io/aws/2022/01/19/Comprehend-NOT_ENOUGH_ACCESS_TO_VPC.html" rel="alternate" type="text/html" title="AWS Comprehend - NOT_ENOUGH_ACCESS_TO_VPC" /><published>2022-01-19T00:00:00+00:00</published><updated>2022-01-19T00:00:00+00:00</updated><id>https://groovytree.github.io/aws/2022/01/19/Comprehend%20-%20NOT_ENOUGH_ACCESS_TO_VPC</id><content type="html" xml:base="https://groovytree.github.io/aws/2022/01/19/Comprehend-NOT_ENOUGH_ACCESS_TO_VPC.html"><![CDATA[<p><img src="/assets/images/posts/2022-01-19/1.png" alt="Foo" /></p>
+
+<h2 id="error">Error</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NOT_ENOUGH_ACCESS_TO_VPC: The provided data access role does not have ec2:DescribeSecurityGroups permission.
+</code></pre></div></div>
+
+<h2 id="solution">Solution</h2>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"Version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-10-17"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Statement"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"Effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allow"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Action"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"ec2:DescribeInstances"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"ec2:DescribeImages"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"ec2:DescribeKeyPairs"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"ec2:DescribeVpcs"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"ec2:DescribeSubnets"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"ec2:DescribeSecurityGroups"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"Resource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>위 policy를 comprehend job을 수행하는 role 의 정책으로 추가한다
+ec2: DescribeInstances, … 외 몇 가지 정책은 추가하지 않으면 같은 에러로 다시 발생한다.</p>
+
+<p>정책 수정 후에도 ec2:DescribeSubnets 에러가 계속 발생할 경우 선택 VPC 내 subnet-a, b, c 를 모두 포함한다.</p>]]></content><author><name>RyuSihyeong</name></author><category term="AWS" /><category term="Troubleshooting" /><category term="AWS Comprehend" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Jekyll Blog - can’t find gem bundler</title><link href="https://groovytree.github.io/web/2022/01/17/Jekyll-can't-find-gem-bundler.html" rel="alternate" type="text/html" title="Jekyll Blog - can’t find gem bundler" /><published>2022-01-17T00:00:00+00:00</published><updated>2022-01-17T00:00:00+00:00</updated><id>https://groovytree.github.io/web/2022/01/17/Jekyll%20-%20can't%20find%20gem%20bundler</id><content type="html" xml:base="https://groovytree.github.io/web/2022/01/17/Jekyll-can't-find-gem-bundler.html"><![CDATA[<h2 id="error">Error</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> bundle <span class="nb">exec </span>jekyll serve <span class="nt">--trace</span>
+Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+        2: from /usr/bin/bundle:23:in <span class="sb">`</span>&lt;main&gt;<span class="s1">'
+        1: from /Library/Ruby/Site/2.6.0/rubygems.rb:284:in `activate_bin_path'</span>
+/Library/Ruby/Site/2.6.0/rubygems.rb:265:in <span class="sb">`</span>find_spec_for_exe<span class="s1">': can'</span>t find gem bundler <span class="o">(&gt;=</span> 0.a<span class="o">)</span> w
+</code></pre></div></div>
+
+<h2 id="solutions">Solutions</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">rm </span>Gemfile.lock
+bundle <span class="nb">install</span>
+</code></pre></div></div>]]></content><author><name>RyuSihyeong</name></author><category term="Web" /><category term="Troubleshooting" /><category term="Jekyll" /><summary type="html"><![CDATA[Error]]></summary></entry><entry><title type="html">Jekyll Blog - You don’t have write permissions for the /Library/Ruby/.. directory</title><link href="https://groovytree.github.io/web/2022/01/16/Jekyll-You-don't-have-write-permissions.html" rel="alternate" type="text/html" title="Jekyll Blog - You don’t have write permissions for the /Library/Ruby/.. directory" /><published>2022-01-16T00:00:00+00:00</published><updated>2022-01-16T00:00:00+00:00</updated><id>https://groovytree.github.io/web/2022/01/16/Jekyll%20-%20You%20don't%20have%20write%20permissions</id><content type="html" xml:base="https://groovytree.github.io/web/2022/01/16/Jekyll-You-don't-have-write-permissions.html"><![CDATA[<h2 id="error">Error</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> gem <span class="nb">install </span>bundler:2.2.31
+ERROR:  While executing gem ... <span class="o">(</span>Gem::FilePermissionError<span class="o">)</span>
+    You don<span class="s1">'t have write permissions for the /Library/Ruby/Gems/2.6.0 directory.
+</span></code></pre></div></div>
+
+<h2 id="solutions">Solutions</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>gem <span class="nb">install </span>bundler:2.2.31
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>bundler
+vim ~/.zshrc
+
+<span class="o">[[</span> <span class="nt">-d</span> ~/.rbenv <span class="o">]]</span> <span class="o">&amp;&amp;</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/.rbenv/bin:<span class="k">${</span><span class="nv">PATH</span><span class="k">}</span> <span class="o">&amp;&amp;</span>
+<span class="nb">eval</span> <span class="s2">"</span><span class="si">$(</span>rbenv init -<span class="si">)</span><span class="s2">"</span>
+
+<span class="nb">source</span> ~/.zshrc
+</code></pre></div></div>]]></content><author><name>RyuSihyeong</name></author><category term="Web" /><category term="Troubleshooting" /><category term="Jekyll" /><summary type="html"><![CDATA[Error]]></summary></entry><entry><title type="html">Jekyll Blog - Could not find ‘bundler’, GemNotFoundException</title><link href="https://groovytree.github.io/web/2022/01/15/Jekyll-Could-not-find-'bundler'.html" rel="alternate" type="text/html" title="Jekyll Blog - Could not find ‘bundler’, GemNotFoundException" /><published>2022-01-15T00:00:00+00:00</published><updated>2022-01-15T00:00:00+00:00</updated><id>https://groovytree.github.io/web/2022/01/15/Jekyll%20-%20Could%20not%20find%20'bundler'</id><content type="html" xml:base="https://groovytree.github.io/web/2022/01/15/Jekyll-Could-not-find-'bundler'.html"><![CDATA[<h2 id="error">Error</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> bundle <span class="nb">exec </span>jekyll serve <span class="nt">--trace</span> 
+Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+	2: from /usr/bin/bundle:23:in <span class="sb">`</span>&lt;main&gt;<span class="s1">'
+	1: from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems.rb:302:in `activate_bin_path'</span>
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems.rb:283:in <span class="sb">`</span>find_spec_for_exe<span class="s1">': Could not find '</span>bundler<span class="s1">' (2.2.31) required by your /Users/User_name/groovytree.github.io/Gemfile.lock. (Gem::GemNotFoundException)
+To update to the latest version installed on your system, run `bundle update --bundler`.
+To install the missing version, run `gem install bundler:2.2.31`
+</span></code></pre></div></div>
+
+<h2 id="solution">Solution</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>bundler:2.2.31
+</code></pre></div></div>]]></content><author><name>RyuSihyeong</name></author><category term="Web" /><category term="Troubleshooting" /><category term="Jekyll" /><summary type="html"><![CDATA[Error &gt;&gt; bundle exec jekyll serve --trace Traceback (most recent call last): 2: from /usr/bin/bundle:23:in `&lt;main&gt;' 1: from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems.rb:302:in `activate_bin_path' /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems.rb:283:in `find_spec_for_exe': Could not find 'bundler' (2.2.31) required by your /Users/User_name/groovytree.github.io/Gemfile.lock. (Gem::GemNotFoundException) To update to the latest version installed on your system, run `bundle update --bundler`. To install the missing version, run `gem install bundler:2.2.31`]]></summary></entry><entry><title type="html">ML - 머신러닝 테스트를 위한 준비과정</title><link href="https://groovytree.github.io/ml/2022/01/10/ML-%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%ED%85%8C%EC%8A%A4%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%A4%80%EB%B9%84%EA%B3%BC%EC%A0%95.html" rel="alternate" type="text/html" title="ML - 머신러닝 테스트를 위한 준비과정" /><published>2022-01-10T00:00:00+00:00</published><updated>2022-01-10T00:00:00+00:00</updated><id>https://groovytree.github.io/ml/2022/01/10/ML%20-%20%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%20%ED%85%8C%EC%8A%A4%EB%A5%BC%20%EC%9C%84%ED%95%9C%20%EC%A4%80%EB%B9%84%EA%B3%BC%EC%A0%95</id><content type="html" xml:base="https://groovytree.github.io/ml/2022/01/10/ML-%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%ED%85%8C%EC%8A%A4%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%A4%80%EB%B9%84%EA%B3%BC%EC%A0%95.html"><![CDATA[<p>Chapter 2. 머신러닝 처음부터 끝까지</p>
+
+<ol>
+  <li>환경 세팅하기
+목표: AWS EC2에 주피터노트북을 설치하고 웹화면으로 접속하여 테스트환경을 구축함</li>
+</ol>
+
+<p>1-1. EC2
+system: ubuntu 20.04
+Instance: t2.2xlarge/ 8 CPU / 32 RAM</p>
+
+<p>1-2. python install</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>software-properties-common
+<span class="nb">sudo </span>add-apt-repository ppa:deadsnakes/ppa
+<span class="nb">sudo </span>apt <span class="nb">install </span>python3.7
+</code></pre></div></div>
+
+<p>ubuntu 18.04 버전에서 install software-properties-common, repository ppa ~ 에 대한 설정 없이 install python3.7을 바로 진행하고 주피터를 설치했더니 아래 같은 어려움이 생겼었다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu@ip-10-0-1-208:~<span class="nv">$ </span>jupyter <span class="nt">--version</span>
+/home/ubuntu/.local/lib/python3.6/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: 0.18ubuntu0.18.04.1 is an invalid version and will not be supported <span class="k">in </span>a future release
+  PkgResourcesDeprecationWarning,
+4.4.0
+ubuntu@ip-10-0-1-208:~<span class="nv">$ </span>jupyter notebook
+/home/ubuntu/.local/lib/python3.6/site-packages/pkg_resources/__init__.py:119: PkgResourcesDeprecationWarning: 0.18ubuntu0.18.04.1 is an invalid version and will not be supported <span class="k">in </span>a future release
+  PkgResourcesDeprecationWarning,
+Error executing Jupyter <span class="nb">command</span> <span class="s1">'notebook'</span>: <span class="o">[</span>Errno 2] No such file or directory
+</code></pre></div></div>
+
+<p>설치 확인</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.7 <span class="nt">-v</span>
+</code></pre></div></div>
+
+<p>1-3. pip install</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>python3-pip
+</code></pre></div></div>
+
+<p>1-4. jupyter install</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip3 <span class="nb">install </span>jupyter
+jupyter <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p>Error code:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Command <span class="s1">'jupyter'</span> not found, but can be installed with:
+
+<span class="nb">sudo </span>apt <span class="nb">install </span>jupyter-core
+</code></pre></div></div>
+<p>jupyter-core를 설치한다</p>
+
+<p>ubuntu 20.04 에서 아래같은 에러가 있었는데, 1-5에 환경설정 파일을 생성하니 서버가 잘 구동됐다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu@ip-10-0-1-195:~<span class="nv">$ </span>jupyter <span class="nt">--version</span>
+jupyter core     : 4.6.3
+jupyter-notebook : 6.4.6
+qtconsole        : 5.2.2
+ipython          : 7.31.0
+ipykernel        : 6.6.1
+jupyter client   : 7.1.0
+jupyter lab      : not installed
+nbconvert        : 6.4.0
+ipywidgets       : 7.6.5
+nbformat         : 5.1.3
+traitlets        : 4.3.3
+ubuntu@ip-10-0-1-195:~<span class="nv">$ </span>jupyter notebook
+Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+  File <span class="s2">"/usr/bin/jupyter"</span>, line 11, <span class="k">in</span> &lt;module&gt;
+    load_entry_point<span class="o">(</span><span class="s1">'jupyter-core==4.6.3'</span>, <span class="s1">'console_scripts'</span>, <span class="s1">'jupyter'</span><span class="o">)()</span>
+  File <span class="s2">"/usr/lib/python3/dist-packages/jupyter_core/command.py"</span>, line 247, <span class="k">in </span>main
+    <span class="nb">command</span> <span class="o">=</span> _jupyter_abspath<span class="o">(</span>subcommand<span class="o">)</span>
+  File <span class="s2">"/usr/lib/python3/dist-packages/jupyter_core/command.py"</span>, line 133, <span class="k">in </span>_jupyter_abspath
+    raise Exception<span class="o">(</span>
+Exception: Jupyter <span class="nb">command</span> <span class="sb">`</span>jupyter-notebook<span class="sb">`</span> not found.
+</code></pre></div></div>
+
+<p>1-5. jupyter run</p>
+
+<p>환경설정 파일 생성
+sha는 위 generate config 시 보여주므로 반드시 복사해둔다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter notebook <span class="nt">--generate-config</span>
+</code></pre></div></div>
+
+<p>환경파일에 vi 로 들어가서 아래처럼 설정을 더한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c <span class="o">=</span> get_config<span class="o">()</span>
+c.NotebookApp.password <span class="o">=</span> u<span class="s1">'sha'</span>
+c.NotebookApp.ip <span class="o">=</span> <span class="s1">'EC2-Private IP Address'</span>
+c.NotebookApp.notebook_dir <span class="o">=</span> <span class="s1">'/home/ubuntu'</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter notebook
+</code></pre></div></div>
+
+<p>주피터를 실행할 수 있다.</p>
+
+<p>실행환경 config 파일을 선택하여 실행하고자 할 경우,</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter notebook <span class="nt">--config</span> jupyter_notebook_config.py
+</code></pre></div></div>
+
+<p>현재 실행중인 주피터 서버 리스팅/ 삭제</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter notebook list
+jupyter notebook stop 8888
+</code></pre></div></div>
+
+<p>노트북 서버 구동시 패스워드 설정</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter notebook password
+</code></pre></div></div>
+
+<p>ec2 환경에서 주피터 서버를 열고 로컬에서 웹브라우저로 접속할 경우, ec2의 퍼블릭 ip와 주피터 서버에 설정한 포트로 접속하면 된다. ec2 에 해당 포트에 대한 오픈 설정은 sg에서 하면 되고..</p>]]></content><author><name>RyuSihyeong</name></author><category term="ML" /><category term="Docs" /><category term="AWS EC2" /><summary type="html"><![CDATA[Chapter 2. 머신러닝 처음부터 끝까지]]></summary></entry><entry><title type="html">ML - 이론/기술적 목차를 만들기 위한 정리</title><link href="https://groovytree.github.io/ml/2022/01/04/ML-%EC%9D%B4%EB%A1%A0-%EA%B8%B0%EC%88%A0%EC%A0%81-%EB%AA%A9%EC%B0%A8%EB%A5%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EC%9C%84%ED%95%9C-%EC%A0%95%EB%A6%AC.html" rel="alternate" type="text/html" title="ML - 이론/기술적 목차를 만들기 위한 정리" /><published>2022-01-04T00:00:00+00:00</published><updated>2022-01-04T00:00:00+00:00</updated><id>https://groovytree.github.io/ml/2022/01/04/ML%20-%20%EC%9D%B4%EB%A1%A0:%EA%B8%B0%EC%88%A0%EC%A0%81%20%EB%AA%A9%EC%B0%A8%EB%A5%BC%20%EB%A7%8C%EB%93%A4%EA%B8%B0%20%EC%9C%84%ED%95%9C%20%EC%A0%95%EB%A6%AC</id><content type="html" xml:base="https://groovytree.github.io/ml/2022/01/04/ML-%EC%9D%B4%EB%A1%A0-%EA%B8%B0%EC%88%A0%EC%A0%81-%EB%AA%A9%EC%B0%A8%EB%A5%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EC%9C%84%ED%95%9C-%EC%A0%95%EB%A6%AC.html"><![CDATA[<p>머신러닝(Machine Learning)은 컴퓨터로 하여금 데이터를 삽입하여 사용자가 원하는 출력물이 나오게 하는 전 과정을 일컫는다. 데이터라는 입력을 정밀히 하는 것이 전처리 과정이고, 출력물이 나오는 블랙박스를 모델링하거나 기계학습을 할 수 있다. 출력결과물은 예측 혹은 분류결과물이 될 수 있다.</p>
+
+<p>입력, 블랙박스, 출력에 대하여 다양한 기술옵션과 경우의 수가 있기 때문에 머신러닝을 단 몇 가지의 기술로 다 말할 수는 없다. 쉽게 이해해보자면 머신러닝에 대한 입력, 블랙박스, 출력에 대한 경우를 이해해보는 것이다.</p>
+
+<p>예를 들어, 다량의 데이터를 주고 해당 데이터에 대한 사례를 기반으로 새로운 데이터에 대한 판단이 가능하도록 머신러닝을 학습시킬 수 있다.</p>
+
+<p>다량의 입력 데이터에 사람에 의한 정답, 오답을 표기하여 컴퓨터에게 이를 학습시키는 경우 이를 지도학습(Supervised)이라고 한다. 입력 데이터에 정답, 오답을 기재하는 일을 라벨링(labelling)이라고 한다. 라벨링하지 않고 컴퓨터를 학습시키는 경우 비지도학습(Unsupervised), 지도와 비지도의 중간 정도의 사람의 간섭이 있을 경우 준지도학습(Semi-supervised) 이라고 한다. 비지도학습에는 대표적으로 군집분류, …. 등이 있다. 입력 데이터에 의존하여 위 구분과 별다르게 나뉘는 알고리즘이 있는데, 입력데이터를 학습한 결과에 따라서 상점과 벌점(panelty)를 부과하고 이를 반복하며 적절한 정책(policy)을 따르는 것을 강화학습(Reinforcement learning) 이라고 한다.</p>
+
+<p>블랙박스, 판단과정에 대하여
+수학적 모델과 함수를 기반으로 하거나 입력 데이터의 사례와 유사한 결과를 낼 수 있는 사례 기반 케이스가 있다. 모델링은 결과를 양산하는 여러 가지 특징적 지표들을 가감 선택하고 가중치를 조정하는 과정이 필요하다. 사례 기반 케이스는 벡터화된 말뭉치(corpus)를 코사인 유사도에 따라 분류하고 판단하는 경우라고 볼 수 있다.</p>]]></content><author><name>RyuSihyeong</name></author><category term="ML" /><category term="Docs" /><summary type="html"><![CDATA[머신러닝(Machine Learning)은 컴퓨터로 하여금 데이터를 삽입하여 사용자가 원하는 출력물이 나오게 하는 전 과정을 일컫는다. 데이터라는 입력을 정밀히 하는 것이 전처리 과정이고, 출력물이 나오는 블랙박스를 모델링하거나 기계학습을 할 수 있다. 출력결과물은 예측 혹은 분류결과물이 될 수 있다.]]></summary></entry></feed>
